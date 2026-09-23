@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#163e35">
+    <title>تکنوسرا | هاست پلی‌استیشن ۴</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; background: #f3f2eb; color: #183c34; font-family: Tahoma, Arial, sans-serif; line-height: 1.8; }
+        a { color: inherit; }
+        .shell { max-width: 1240px; margin: auto; padding: 0 48px; }
+        .topbar { display: flex; align-items: center; justify-content: space-between; padding: 27px 0; border-bottom: 1px solid #d3d8ce; }
+        .brand { display: flex; align-items: center; }
+        .brand-mark { display: inline-block; width: 42px; height: 42px; margin-left: 13px; background: #193e35; color: #dcf39d; text-align: center; line-height: 42px; font-size: 23px; font-weight: bold; border-radius: 12px 3px 12px 3px; }
+        .brand-name { font-size: 21px; font-weight: bold; }
+        .brand-sub { display: block; font: 10px Arial, sans-serif; letter-spacing: 2px; color: #63786d; }
+        .platform { direction: ltr; font: 12px Arial, sans-serif; letter-spacing: 2px; border: 1px solid #cbd2c6; padding: 9px 14px; border-radius: 30px; }
+        main { display: flex; align-items: center; min-height: 650px; padding: 66px 0; }
+        .intro { width: 43%; padding-left: 58px; }
+        .eyebrow { display: flex; align-items: center; font-size: 12px; color: #557060; margin-bottom: 24px; }
+        .eyebrow::before { content: ''; width: 23px; height: 2px; background: #6d8962; margin-left: 10px; }
+        h1 { font-size: 51px; line-height: 1.65; letter-spacing: -2px; margin: 0 0 20px; }
+        h1 span { display: block; color: #778e60; }
+        .intro p { max-width: 335px; font-size: 14px; color: #60716a; line-height: 2.2; margin: 0; }
+        .console-art { direction: ltr; display: flex; align-items: center; margin-top: 45px; color: #7e916e; }
+        .symbol { display: inline-block; margin-right: 21px; font: 30px Arial, sans-serif; }
+        .art-line { height: 1px; flex: 1; background: #d3d8ce; }
+        .selector { width: 57%; background: #183e35; color: #f5f6ec; border-radius: 24px; padding: 31px; box-shadow: 0 22px 45px rgba(24, 62, 53, .1); }
+        .panel-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 23px; }
+        h2 { margin: 0; font-size: 18px; }
+        .step { font: 11px Arial, sans-serif; letter-spacing: 2px; color: #bdd294; }
+        .version-card { position: relative; display: flex; align-items: center; padding: 23px 19px; margin-top: 12px; background: #234b41; border: 1px solid #416258; border-radius: 13px; text-decoration: none; transition: background .18s, border-color .18s, transform .18s; }
+        .version-card:hover, .version-card:focus { background: #315d4c; border-color: #d4eda6; outline: 3px solid #d4eda6; outline-offset: 3px; transform: translateX(-3px); }
+        .version-card:active { transform: scale(.99); }
+        .row-number { color: #9cb2a2; font: 12px Arial, sans-serif; padding-left: 19px; }
+        .version-info { flex: 1; min-width: 0; }
+        .version-title { display: block; direction: ltr; text-align: right; font: bold 29px Arial, sans-serif; letter-spacing: -.5px; }
+        .version-description { display: block; margin-top: 8px; color: #b7c9bd; font-size: 11px; }
+        .row-end { text-align: left; padding-right: 12px; }
+        .provider { display: block; font: 11px Arial, sans-serif; color: #d9edb5; }
+        .arrow { display: block; font: 24px Arial, sans-serif; color: #d9edb5; margin-top: 8px; }
+        .panel-note { margin: 23px 0 0; font-size: 11px; color: #b8c9bd; display: flex; align-items: baseline; }
+        .note-dot { width: 6px; height: 6px; flex-shrink: 0; border-radius: 50%; background: #d4eda6; margin-left: 9px; }
+        .help { display: flex; align-items: center; justify-content: space-between; padding: 24px 0; border-top: 1px solid #d3d8ce; }
+        .help-label { font-size: 12px; color: #526b5f; }
+        .help-path { direction: ltr; font: 12px Arial, sans-serif; color: #526b5f; }
+        footer { display: flex; justify-content: space-between; padding: 22px 0 28px; color: #7b887d; font-size: 10px; }
+        .footer-en { font-family: Arial, sans-serif; letter-spacing: 1.5px; }
+        @media (min-width: 1500px) { main { min-height: 740px; } }
+        @media (max-width: 1000px) { .shell { padding: 0 30px; } .intro { padding-left: 28px; } h1 { font-size: 39px; } .selector { padding: 23px; } .version-title { font-size: 25px; } }
+        @media (max-width: 720px) { .shell { padding: 0 20px; } .topbar { padding: 20px 0; } .platform { font-size: 10px; letter-spacing: 1px; padding: 8px 10px; } main { display: block; min-height: 0; padding: 36px 0; } .intro, .selector { width: 100%; } .intro { padding: 0 0 30px; } .eyebrow { margin-bottom: 12px; } h1 { font-size: 37px; line-height: 1.6; margin-bottom: 14px; } h1 span { display: inline; } .intro p { max-width: 100%; font-size: 13px; } .console-art { display: none; } .selector { border-radius: 19px; padding: 23px 18px; } .version-card { padding: 21px 13px; } .row-number { padding-left: 12px; } .version-title { font-size: 25px; } .version-description { font-size: 10px; } .help { display: block; padding: 20px 0; } .help-path { display: block; margin-top: 9px; text-align: right; } footer { font-size: 9px; } }
+        @media (prefers-reduced-motion: reduce) { .version-card { transition: none; } }
+    </style>
+</head>
+<body>
+    <div class="shell">
+        <header class="topbar">
+            <div class="brand"><span class="brand-mark" aria-hidden="true">T</span><div><span class="brand-name">تکنوسرا</span><span class="brand-sub" dir="ltr">CONSOLE HOST COLLECTION</span></div></div>
+            <span class="platform">PLAYSTATION 4</span>
+        </header>
+        <main>
+            <section class="intro" aria-labelledby="page-title">
+                <div class="eyebrow">مجموعه هاست پلی‌استیشن</div>
+                <h1 id="page-title">هاست <span>پلی‌استیشن ۴</span></h1>
+                <p>نسخهٔ نرم‌افزار کنسولت را پیدا کن و هاست متناسب با آن را از فهرست روبه‌رو باز کن.</p>
+                <div class="console-art" aria-hidden="true"><span class="symbol">△</span><span class="symbol">○</span><span class="symbol">×</span><span class="symbol">□</span><span class="art-line"></span></div>
+            </section>
+            <section class="selector" aria-labelledby="selector-title">
+                <div class="panel-heading"><h2 id="selector-title">انتخاب فریمور</h2><span class="step" dir="ltr">01 / SELECT</span></div>
+                <a class="version-card" href="505n672/version-selector.html">
+                    <span class="row-number" aria-hidden="true">01</span>
+                    <span class="version-info"><span class="version-title">5.05 &amp; 6.72</span><span class="version-description">ویژهٔ نسخه‌های ۵.۰۵ و ۶.۷۲</span></span>
+                    <span class="row-end"><span class="provider" dir="ltr">Pulse</span><span class="arrow" aria-hidden="true">←</span></span>
+                </a>
+                <a class="version-card" href="900f/index.html">
+                    <span class="row-number" aria-hidden="true">02</span>
+                    <span class="version-info"><span class="version-title">9.xx</span><span class="version-description">بازهٔ پشتیبانی: ۷.۰۲ تا ۹.۶۰</span></span>
+                    <span class="row-end"><span class="provider" dir="ltr">Feyzee</span><span class="arrow" aria-hidden="true">←</span></span>
+                </a>
+                <a class="version-card" href="g2all/index.html">
+                    <span class="row-number" aria-hidden="true">03</span>
+                    <span class="version-info"><span class="version-title">7.00 – 13.52</span><span class="version-description">بازهٔ پشتیبانی: ۷.۰۰ تا ۱۳.۵۲</span></span>
+                    <span class="row-end"><span class="provider" dir="ltr">GamerHack</span><span class="arrow" aria-hidden="true">←</span></span>
+                </a>
+                <p class="panel-note"><span class="note-dot" aria-hidden="true"></span>هاست را مطابق نسخهٔ نصب‌شده روی کنسول انتخاب کن.</p>
+            </section>
+        </main>
+        <aside class="help" aria-label="راهنمای پیدا کردن نسخه"><span class="help-label">نسخهٔ کنسول را از کجا پیدا کنم؟</span><span class="help-path">Settings &gt; System &gt; System Information</span></aside>
+        <footer><span>تکنوسرا · مجموعه هاست PS4</span><span class="footer-en" dir="ltr">CHOOSE. CONNECT. PLAY.</span></footer>
+    </div>
+    <script>
+        // Native links preserve PS4 cursor navigation and Enter / X activation.
+        // Also support Space without intercepting directional controls.
+        var cards = document.querySelectorAll('.version-card');
+        for (var i = 0; i < cards.length; i++) {
+            cards[i].addEventListener('keydown', function (event) {
+                if (event.key === ' ' || event.keyCode === 32) {
+                    event.preventDefault();
+                    this.click();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
